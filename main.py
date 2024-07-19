@@ -30,6 +30,14 @@ class CSV:
             writer.writerow(new_entry)
         print("Entry added successfully")
 
-CSV.initialize_csv()
-CSV.add_entry("16-07-2024", 435.28, "Income", "Salary")
+def add():
+    CSV.initialize_csv()
+    date = get_date("Enter the date of the transaction (dd-mm-yyyy) or enter for today's date: ", allow_default=True)
+    amount = get_amount()
+    category = get_category()
+    description = get_decription()
+    CSV.add_entry(date, amount, category, description)
+
+
+add()
         
